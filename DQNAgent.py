@@ -48,11 +48,13 @@ class Network(nn.Module):
 
 
 class DQNAgent:
-    def __init__(self, env: SnakeEnv):
+    def __init__(self, env: SnakeEnv, PATH=None):
         self.env = env
 
         # Main model
         self.model = self.create_model()
+        if PATH is not None:
+            self.model.load_state_dict(torch.load(PATH))
 
         # Target network
         self.target_model = self.create_model()

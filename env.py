@@ -54,7 +54,7 @@ class SnakeEnv:
     def render(self):
         img = self.get_img(True)
         cv2.imshow("snake!", img)
-        cv2.waitKey(100)
+        cv2.waitKey(20)
 
     def get_free_squares(self):
         free_squares = []
